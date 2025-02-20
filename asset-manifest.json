@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Task/static/css/main.a54ac8ae.css",
+    "main.js": "/Task/static/js/main.15ec516f.js",
+    "static/js/453.e52305e5.chunk.js": "/Task/static/js/453.e52305e5.chunk.js",
+    "static/media/bag-img.avif": "/Task/static/media/bag-img.b2d8ee70d327afc65a51.avif",
+    "index.html": "/Task/index.html",
+    "main.a54ac8ae.css.map": "/Task/static/css/main.a54ac8ae.css.map",
+    "main.15ec516f.js.map": "/Task/static/js/main.15ec516f.js.map",
+    "453.e52305e5.chunk.js.map": "/Task/static/js/453.e52305e5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a54ac8ae.css",
+    "static/js/main.15ec516f.js"
+  ]
+}
