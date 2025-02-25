@@ -6,10 +6,10 @@ function Form() {
   const [id, setId] = useState(null);
   const { register, handleSubmit } = useForm();
   const onSubmitData = (data) => {
-    setId(Number(data.id))
-    document.getElementById("input").value=""
+    setId(Number(data.id));
+    document.getElementById("input").value = "";
   };
-  
+
   return (
     <>
       <form
@@ -17,16 +17,18 @@ function Form() {
         className="w-full flex justify-center p-10 "
       >
         <input
-        id="input"
+          id="input"
           type="number"
           {...register("id")}
           placeholder="Enter Number"
           className="mr-5 rounded-2xl focus:border-black"
         />
-        <input
+        <button
           type="submit"
           className="border p-2 border-gray-800 rounded-2xl"
-        />
+        >
+          مشاهده
+        </button>
       </form>
       {id !== null ? (
         <div className="text-center w-[100%] flex justify-center mt-[100px]">
