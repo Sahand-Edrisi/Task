@@ -1,8 +1,9 @@
 import { Card } from "flowbite-react";
 
-function CardItem({ product }) {
+function Product({product}) {
   return (
-    <div className="cardContainer">
+  <>
+      <div className="cardContainer">
       <Card className="max-w-sm p-3">
         <img
           src={product.images[0].image}
@@ -13,10 +14,11 @@ function CardItem({ product }) {
           {product.nameFa}
         </p>
         <p className="text-[19px] font-bold tracking-tight text-right text-gray-600 dark:text-white">
-        <span > رنگ :</span> {product.color[0].color}
+          <span> رنگ :</span> {product.color[0].color}
         </p>
         <span className="text-[28px] text-right h-4 font-bold text-gray-500 dark:text-white ">
-        <span > قیمت : </span>{product.price}
+          <span> قیمت : </span>
+          {product.price}
         </span>
         <div className="flex items-center justify-between ">
           <div className="flex ">
@@ -30,7 +32,8 @@ function CardItem({ product }) {
         </div>
       </Card>
     </div>
-  );
+  </>
+  )
 }
 
-export default CardItem;
+export default Product

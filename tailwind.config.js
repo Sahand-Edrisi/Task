@@ -2,7 +2,14 @@ const flowbite = require("flowbite-react/tailwind");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/*.js","./src/Component/CardItem.jsx" ,flowbite.content()],
+  content: [
+    "./src/*.js",
+    "./src/*.jsx",
+    "./src/Component/Form.jsx",
+    "./src/Component/NotProduct.jsx",
+    "./src/Component/Product.jsx",
+    flowbite.content(),
+  ],
   theme: {
     extend: {},
   },
