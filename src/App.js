@@ -1,11 +1,7 @@
-import CardItem from "./Component/CardItem";
+import Form from "./Component/Form";
 
 function App() {
-  return (
-    <div className="text-center w-[100%] flex justify-center mt-[100px]">
-      <CardItem />
-    </div>
-  );
+  return <Form />;
 }
 
 export default App;
