@@ -1,6 +1,6 @@
 {
   "homepage": "https://myusername.github.io/Task-card",
-  "name": "task",
+  "name": "task-card",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
