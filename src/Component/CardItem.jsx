@@ -1,7 +1,6 @@
 import { Card } from "flowbite-react";
 
 function CardItem({ product }) {
-  console.log(product);
   return (
     <div className="cardContainer">
       <Card className="max-w-sm p-3">
@@ -16,8 +15,8 @@ function CardItem({ product }) {
         <p className="text-[19px] font-bold tracking-tight text-right text-gray-600 dark:text-white">
         <span > رنگ :</span> {product.color[0].color}
         </p>
-        <span className="text-[28px] text-left h-4 font-bold text-gray-500 dark:text-white ">
-          {product.price}
+        <span className="text-[28px] text-right h-4 font-bold text-gray-500 dark:text-white ">
+        <span > قیمت : </span>{product.price}
         </span>
         <div className="flex items-center justify-between ">
           <div className="flex ">
