@@ -2,6 +2,7 @@ import React from "react";
 import Products from "./Products";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+
 function Form() {
   const [id, setId] = useState(null);
   const { register, handleSubmit } = useForm();
@@ -9,7 +10,6 @@ function Form() {
     setId(Number(data.id));
     document.getElementById("input").value = "";
   };
-
   return (
     <>
       <form

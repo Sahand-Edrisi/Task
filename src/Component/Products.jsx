@@ -1,27 +1,26 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import Product from "./Product";
 import NotProduct from "./NotProduct";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../redux/Slice";
+import { useEffect } from "react";
 
 function Products({ id }) {
-  const [product, setProduct] = useState(null);
-
+  const dispatch = useDispatch();
+  const {
+    data: products,
+    status,
+    error,
+  } = useSelector((state) => state.products);
   useEffect(() => {
-    const response = axios.get(`https://rotikala.chbk.app/products`);
-    response
-      .then((response) => {
-        if (response.status === 200) {
-          setProduct(response.data.data);
-        }
-      })
-      .catch((e) => {
-        console.log(e.massage);
-      });
-  }, []);
+    dispatch(fetchProducts());
+  }, [dispatch]);
+
+  if (status === "loading") return <p>is Loading ...</p>;
+  if (status === "Failed") return <p>error {error}</p>;
 
   let selectItems = [];
-  if (product !== null) {
-    product.map((item) => {
+  if (products !== null) {
+    products.map((item) => {
       if (item.id === id) {
         return selectItems.push(item);
       } else {
@@ -29,12 +28,13 @@ function Products({ id }) {
       }
     });
   }
+
   return (
     <>
       {selectItems.length > 0 ? (
         <Product product={selectItems[0]} />
       ) : (
-<NotProduct/>
+        <NotProduct />
       )}
     </>
   );
