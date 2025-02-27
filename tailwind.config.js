@@ -8,6 +8,7 @@ module.exports = {
     "./src/Component/Form.jsx",
     "./src/Component/NotProduct.jsx",
     "./src/Component/Product.jsx",
+    "./src/Component/Products.jsx",
     flowbite.content(),
   ],
   theme: {

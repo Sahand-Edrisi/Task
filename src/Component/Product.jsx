@@ -3,10 +3,10 @@ import { Card } from "flowbite-react";
 function Product({ product }) {
   return (
     <>
-      <div className="cardContainer">
-        <Card className="max-w-sm p-3">
+      <div className="cardContainer ">
+        <Card className=" p-3">
           <img
-            src={product.images[0].image}
+            src={product.images? product.images : undefined}
             alt=""
             className="w-[100%] h-[300px] object-cover "
           />
@@ -14,7 +14,7 @@ function Product({ product }) {
             {product.nameFa}
           </p>
           <p className="text-[19px] font-bold tracking-tight text-right text-gray-600 dark:text-white">
-            <span> رنگ :</span> {product.color[0].color}
+            <span> رنگ :</span> {product.color[0] ? product.color[0].color : undefined}
           </p>
           <span className="text-[28px] text-right h-4 font-bold text-gray-500 dark:text-white ">
             <span> قیمت : </span>
