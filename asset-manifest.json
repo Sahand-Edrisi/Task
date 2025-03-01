@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Task-card/static/css/main.8d22c523.css",
-    "main.js": "/Task-card/static/js/main.1e32a7e9.js",
+    "main.css": "/Task-card/static/css/main.b5964d8b.css",
+    "main.js": "/Task-card/static/js/main.1b5c53e3.js",
     "static/js/453.956b8c19.chunk.js": "/Task-card/static/js/453.956b8c19.chunk.js",
     "static/media/hal-gatewood-Pr578ZCufII-unsplash.jpg": "/Task-card/static/media/hal-gatewood-Pr578ZCufII-unsplash.767489ffc5148a23dd6f.jpg",
     "index.html": "/Task-card/index.html",
-    "main.8d22c523.css.map": "/Task-card/static/css/main.8d22c523.css.map",
-    "main.1e32a7e9.js.map": "/Task-card/static/js/main.1e32a7e9.js.map",
+    "main.b5964d8b.css.map": "/Task-card/static/css/main.b5964d8b.css.map",
+    "main.1b5c53e3.js.map": "/Task-card/static/js/main.1b5c53e3.js.map",
     "453.956b8c19.chunk.js.map": "/Task-card/static/js/453.956b8c19.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8d22c523.css",
-    "static/js/main.1e32a7e9.js"
+    "static/css/main.b5964d8b.css",
+    "static/js/main.1b5c53e3.js"
   ]
 }
