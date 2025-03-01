@@ -24,8 +24,7 @@ export const fetchProductById = createAsyncThunk(
     const response = await axios.get(
       `https://rotikala.chbk.app/products/${id}/`
     );
-    console.log(response);
-    return response;
+    return response.data.data.product;
   }
 );
 

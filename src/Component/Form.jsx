@@ -1,18 +1,16 @@
 import React from "react";
 import Products from "./Products";
+import Product from "./Product";
+import NotProduct from "./NotProduct";
+import SkeletonProducts from "./SkeletonProducts";
+import SkeletonSearch from "./SkeletonSearch";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts, fetchProductById } from "../redux/Slice";
 import { useEffect } from "react";
-import { Spinner } from "flowbite-react";
 function Form() {
   const [id, setId] = useState(null);
-  const { register, handleSubmit, setValue } = useForm();
-  const onSubmitData = (data) => {
-    setId(Number(data.id));
-    setValue("id", "");
-  };
   const dispatch = useDispatch();
   const {
     productsData: products,
@@ -24,27 +22,36 @@ function Form() {
     productError,
   } = useSelector((state) => state.products || state.product);
 
-  console.log(product);
-  console.log(products);
+  const { register, handleSubmit, setValue } = useForm();
+  const onSubmitData = (data) => {
+    setId(Number(data.id));
+    setValue("id", "");
+    dispatch(fetchProductById(Number(data.id)));
+  };
+
   useEffect(() => {
     dispatch(fetchProducts());
-    // dispatch(fetchProductById(id));
   }, [dispatch]);
 
   if (productsStatus === "loading" || productStatus === "loading")
     return (
-      <div className="text-center m-[10px] flex justify-center mt-[100px] ">
-        <div className="w-[220px] h-[60px] flex justify-center p-[10px] bg-green-900 rounded-lg">
-          <Spinner size="xl" className="mr-[10px]" color="success" />
-          <span className="text-[30px] text-white">Loading ...</span>
+      <div className="text-center m-[10px] grid justify-center mt-[100px] ">
+        <div className="flex justify-center">
+          <SkeletonSearch />
+        </div>
+        <div className="flex flex-wrap justify-center">
+          <SkeletonProducts />
+          <SkeletonProducts />
+          <SkeletonProducts />
+          <SkeletonProducts />
+          <SkeletonProducts />
+          <SkeletonProducts />
         </div>
       </div>
     );
   if (productsStatus === "failed" || productError === "failed")
     return <p>error {productsError}</p>;
 
-  // const product = products.filter((item) => item.id === id);
-  console.log(id);
   return (
     <>
       <form
@@ -68,15 +75,20 @@ function Form() {
       {id === null ? (
         <div className="flex flex-wrap justify-around">
           {products.map((product) => (
-            <div
-              key={product.id}
-              className="m-[10px] flex mt-[100px]"
-            >
+            <div key={product.id} className="m-[10px] flex mt-[100px]">
               <Products products={product} />
             </div>
           ))}
         </div>
-      ) : undefined}
+      ) : productStatus !== "failed" ? (
+        <div className="flex flex-wrap justify-around">
+          <Product product={product} />
+        </div>
+      ) : (
+        <div className="flex flex-wrap justify-around">
+          <NotProduct />
+        </div>
+      )}
     </>
   );
 }
